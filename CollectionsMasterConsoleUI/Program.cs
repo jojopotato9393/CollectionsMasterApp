@@ -11,12 +11,12 @@ namespace CollectionsMasterConsoleUI
         static void Main(string[] args)
         {
 
-        //TODO: Follow the steps provided in the comments under each region.
-        //Make the console formatted to display each section well
-        //Utlilize the method stubs at the bottom for the methods you must create ⬇⬇⬇
+            //TODO: Follow the steps provided in the comments under each region.
+            //Make the console formatted to display each section well
+            //Utlilize the method stubs at the bottom for the methods you must create ⬇⬇⬇
 
-        #region Arrays
-        //TODO: Create an integer Array of size 50
+            #region Arrays
+            //TODO: Create an integer Array of size 50
             int[] numbers = new int[50];
             Populater(numbers);
             for (int i = 0; i < numbers.Length; i++)
@@ -75,12 +75,12 @@ namespace CollectionsMasterConsoleUI
             /*   Set Up   */
             //TODO: Create an integer List
             List<int> list = new List<int>();
-           Console.WriteLine(list.Capacity);
+            Console.WriteLine(list.Capacity);
             NumberPrinter(list);
             Console.WriteLine();
-          ////TODO: Print the capacity of the list to the console
-            
-           
+            ////TODO: Print the capacity of the list to the console
+
+
 
             ////TODO: Populate the List with 50 random numbers between 0 and 50 you will need a method for this            
             Populater(list);
@@ -103,19 +103,19 @@ namespace CollectionsMasterConsoleUI
             {
                 NumberChecker(list, userNumber);
             }
-            
-           
+
+
             Console.WriteLine("-------------------");
 
             Console.WriteLine("All Numbers:");
             //UNCOMMENT this method to print out your numbers from arrays or lists
-           NumberPrinter(list);
+            NumberPrinter(list);
             Console.WriteLine("-------------------");
 
 
             //TODO: Create a method that will remove all odd numbers from the list then print results
             Console.WriteLine("Evens Only!!");
-           OddKiller(list);
+            OddKiller(list);
            
 
             Console.WriteLine("------------------");
@@ -128,7 +128,7 @@ namespace CollectionsMasterConsoleUI
 
             //TODO: Convert the list to an array and store that into a variable
             int[] newArray = list.ToArray();
-            foreach(int num in newArray)
+            foreach (int num in newArray)
             {
                 Console.WriteLine(num);
             }
@@ -158,48 +158,42 @@ namespace CollectionsMasterConsoleUI
         private static void OddKiller(List<int> numberList)
         {
 
-            foreach (int num in numberList)
+            for(int num = 0; num < numberList.Count; num++)
             {
-                if (num % 2 == 0)
+                if (numberList[num] % 2 != 0)
                 {
-                    Console.WriteLine(num);
-                    
+                    numberList.Remove(numberList[num]);
+                    num--;
                 }
-               
+
             }
-            
-
-            
-            
-
-               
-            
+           
         }
 
         private static void NumberChecker(List<int> numberList, int searchNumber)
         {
-          if(numberList.Contains(searchNumber))
+            if (numberList.Contains(searchNumber))
             {
                 Console.WriteLine($"the number {searchNumber} is in the list");
             }
-          else
+            else
             {
                 Console.WriteLine($"the number {searchNumber} is not in the list");
             }
-            
+
         }
 
         private static void Populater(List<int> numberList)
         {
             Random rng = new Random();
-            
+
             for (int i = 0; i < 51; i++)
             {
-                
-                numberList.Add(rng.Next(0,51));
-                
+
+                numberList.Add(rng.Next(0, 51));
+
             }
-           
+
         }
 
         private static void Populater(int[] numbers)
@@ -207,7 +201,7 @@ namespace CollectionsMasterConsoleUI
             Random rng = new Random();
             for (int i = 0; i < numbers.Length; i++)
             {
-                numbers[i] = rng.Next(0,51);
+                numbers[i] = rng.Next(0, 51);
             }
 
 
